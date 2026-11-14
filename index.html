@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light" name="color-scheme"/><title>Разумная уборка кухни — цепочка промптов</title><meta content="Интерактивный лист с пятью промптами и паспортом кухни. Prism Clean 3D." name="description"/><style>
+:root{--ink:#152b33;--muted:#637783;--deep:#065e67;--emerald:#008f70;--jade:#20d6b1;--teal:#01a7bb;--ice:#f4fbfe;--line:#d8ebee;--glass:#e8f8fc;--shadow:0 16px 45px rgba(15,80,99,.09),0 2px 8px rgba(15,80,99,.06);font-family:Inter,"Segoe UI",Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(950px 500px at 10% -2%,#e9fff9 0,transparent 70%),radial-gradient(850px 450px at 100% 11%,#e8f6ff 0,transparent 65%),#fff;font-size:16px;line-height:1.47}button,input,textarea{font:inherit}button{cursor:pointer}:focus-visible{outline:3px solid #0879ce;outline-offset:2px}.page{max-width:1140px;margin:auto;padding:28px clamp(14px,4.6vw,45px) 25px}.small-head{font-weight:780;font-size:clamp(13px,1.7vw,16px);display:flex;align-items:center;gap:12px;margin-bottom:28px}.head-bar{width:5px;height:29px;background:linear-gradient(180deg,var(--jade),var(--emerald));border-radius:8px;box-shadow:0 3px 8px #18bda94d}.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 240px;align-items:center;gap:8px;min-height:246px;margin-bottom:36px;padding:10px 6px 24px}.hero::before{content:"";position:absolute;inset:-10px -25px -6px 0;background:linear-gradient(115deg,rgba(255,255,255,.9),rgba(246,255,255,.6));border:1px solid #effafb;border-radius:36px;z-index:-1}.hero h1{font-size:clamp(41px,6.7vw,78px);line-height:.99;letter-spacing:-.055em;margin:0 0 16px;font-weight:900;text-transform:uppercase}.hero .glass-word{display:inline-block;white-space:normal;color:#fff;text-shadow:0 1px 8px #00665540;background:linear-gradient(160deg,#11d6b5 0%,#008d89 65%,#005f78 100%);padding:.12em .24em .18em;border:1px solid #b5fff6;border-bottom:3px solid #006c74;border-radius:20px;box-shadow:0 10px 25px #06a8a32e,inset 0 2px 7px #ffffff9c,inset 0 -6px 12px #005b7560;position:relative}.hero .glass-word:after{content:"";height:28%;width:89%;position:absolute;top:5%;left:6%;border-radius:40%;background:linear-gradient(#fff9,transparent);opacity:.7;pointer-events:none}.hero-sub{font-size:clamp(16px,2vw,21px);color:#375f68;max-width:730px;margin:0}.hero-art{width:230px;height:210px;position:relative;isolation:isolate}.hero-art:before{content:"";width:205px;height:137px;position:absolute;right:5px;bottom:18px;background:linear-gradient(135deg,#ffffff7e,#c1fff980);border:1px solid #c4eff7;transform:rotate(-9deg);border-radius:29px;box-shadow:inset 2px 2px 9px #fff,inset -3px -4px 9px #007b8c25,0 15px 25px #00687a1d}.hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;mask-image:radial-gradient(ellipse at 63% 45%,black 47%,transparent 76%);z-index:1}.hero-art:after{content:"";position:absolute;width:44px;height:44px;right:12px;top:8px;background:radial-gradient(circle at 30% 24%,#fff,#cdf6ff 35%,#47e0d3 75%,#007b9d);border-radius:50% 50% 60% 60%;box-shadow:0 4px 14px #4fd8cd50;opacity:.64}.top-tools{display:flex;justify-content:space-between;align-items:center;margin:0 0 26px;gap:13px;flex-wrap:wrap}.top-tools span{font-size:13px;color:var(--muted)}.print-btn{border:1px solid #d6e8eb;background:linear-gradient(160deg,#fff,#e8f8fb);padding:10px 17px;border-radius:16px;color:#215d65;font-weight:750;box-shadow:0 3px 12px #155d6b10}.stage{border-radius:29px;padding:clamp(17px,3vw,32px);margin-bottom:27px;background:linear-gradient(130deg,rgba(255,255,255,.98),rgba(251,255,255,.96));border:1px solid #dbeef2;box-shadow:var(--shadow);position:relative;overflow:hidden}.stage:before{content:"";height:4px;position:absolute;left:30px;right:30px;top:0;border-radius:100%;background:linear-gradient(90deg,#60f3cf,#009da8,#cdeeff);opacity:.8}.stage-top{display:flex;align-items:center;gap:18px;padding:3px 0 18px}.number-pill{min-width:69px;height:67px;display:grid;place-items:center;font-size:25px;font-weight:900;color:#fff;border-radius:22px;background:linear-gradient(140deg,#4be7c3,#007f93);border:1px solid #a3fff1;box-shadow:inset 0 3px 7px #ffffff70,inset 0 -5px 10px #005e805c,0 8px 15px #00888735;text-shadow:0 1px 2px #00666a75}.stage-eyebrow,.passport-overline{font-size:11px;letter-spacing:.12em;color:#008e90;font-weight:850;margin:0 0 4px}.stage h2{font-size:clamp(23px,3vw,33px);font-weight:890;line-height:1.14;letter-spacing:-.03em;margin:0}.intro-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:19px}.intro-cell{border:1px solid #e0eef0;background:linear-gradient(130deg,#fff,#f4fcff);border-radius:18px;padding:14px 15px;min-width:0;box-shadow:0 5px 12px #1a728214}.intro-k{display:inline-block;font-size:12px;font-weight:850;color:#006b73;background:#e1fbf6;padding:5px 10px;border:1px solid #c6f3e9;border-radius:50px}.intro-cell p{font-size:13px;margin:11px 0 0;color:#35525a;line-height:1.42}.editor-shell{background:#fff;border:1px solid #d9e6eb;border-radius:21px;overflow:hidden;box-shadow:0 4px 16px #2367710e}.editor-head{display:flex;justify-content:space-between;align-items:center;padding:15px 17px;background:linear-gradient(110deg,#edfffa,#f5fcff 70%,#fff);border-bottom:1px solid #deedef;gap:15px}.editor-head>div{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.editor-dot{display:inline-block;width:10px;height:10px;background:#03b99a;border-radius:50%;box-shadow:0 0 0 4px #cefaf0}.editor-head strong{font-size:17px}.editor-hint{font-size:12px;color:#69818b}.editor-tag{font-weight:800;font-size:12px;white-space:nowrap;color:#3e8991;border:1px solid #d7f4f1;border-radius:50px;padding:5px 8px}.prompt-editor{width:100%;resize:vertical;min-height:300px;display:block;overflow:hidden;background:#fff;color:#24363c;border:0;outline:0!important;padding:20px 23px;font-family:Inter,"Segoe UI",Arial,Helvetica,sans-serif;font-size:14px;line-height:1.67;white-space:pre-wrap}.prompt-editor:focus{box-shadow:inset 0 0 0 3px #b8f2e8}.action-bar{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;gap:15px;border-top:1px solid #edf3f5;flex-wrap:wrap}.action-hint{font-size:12px;color:#69818b;max-width:530px}.copy-btn{border:1px solid #78eddf;display:inline-flex;align-items:center;gap:10px;justify-content:center;position:relative;overflow:hidden;border-radius:15px;padding:13px 19px;background:linear-gradient(160deg,#04b89f,#007785);box-shadow:inset 0 2px 2px #ffffff80,inset 0 -3px 7px #005c7355,0 8px 16px #007e8240;color:#fff;font-weight:850;white-space:nowrap;min-height:48px;transition:transform .17s,background .2s,box-shadow .2s}.copy-btn:hover{transform:translateY(-1px)}.copy-btn:active{transform:scale(.97)}.copy-btn.copied{background:linear-gradient(120deg,#1bcca3,#008d70);animation:copypop .48s cubic-bezier(.2,.9,.3,1.2)}.copy-btn.copied .copy-icon{display:none}.check-icon{display:none}.copy-btn.copied .check-icon{display:inline;color:#fff;font-size:21px}.copy-btn.copied::after{content:"";position:absolute;top:-50%;left:-30%;width:40%;height:200%;transform:rotate(22deg);background:#ffffff3d;animation:shimmer .65s ease-out}.copy-icon{font-size:20px;font-weight:400}.passport{border-radius:23px;border:1px solid #cfece8;background:linear-gradient(155deg,#f2fffd,#f5fbff 65%,#fff);padding:clamp(16px,2.3vw,23px);margin:0 0 22px;box-shadow:0 10px 24px #168f9017}.passport-title-row{display:flex;align-items:center;justify-content:space-between;gap:15px}.passport h3{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.03em;margin:2px 0 5px}.passport-title-row p:last-child{color:#52727b;font-size:14px;margin:0}.glass-mini{width:62px;height:62px;flex:0 0 auto;background:linear-gradient(130deg,#ffffffed,#b6ffe7aa);border:1px solid #c1fff9;border-radius:21px;display:grid;place-items:center;color:#078875;font-size:34px;font-weight:850;box-shadow:inset 0 2px 7px #fff,inset -4px -5px 7px #057a8050,0 10px 15px #1b878426;transform:rotate(8deg)}.check-layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:21px 0}.check-group{border:1px solid #d4e9e8;background:#ffffffd9;padding:15px;border-radius:18px;min-width:0;margin:0}.check-group legend{font-size:15px;font-weight:840;color:#15636c;padding:0 6px}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.choice-wrap{min-width:0}.pick{border:1px solid #e1eded;padding:9px 11px;border-radius:12px;background:#fff;display:flex;align-items:flex-start;gap:8px;min-height:43px;cursor:pointer;font-size:13px;line-height:1.25;font-weight:600;color:#3e5056;transition:background .15s,border-color .15s,box-shadow .15s}.pick input{accent-color:#008e83;flex:0 0 16px;width:16px;height:16px;margin:1px 0 0}.pick:has(input:checked){border-color:#4fdbc7;background:#e5fbf5;color:#064d4f;box-shadow:0 4px 9px #19a59f18}.choice-wrap .other-input{display:none}.choice-wrap:has(> label.pick > input[type="checkbox"]:checked) .other-input{display:block}.other-input{width:100%;border:1px solid #d2e5e8;border-radius:10px;padding:9px 10px;margin:5px 0 0;background:#fff;color:#134651;font-size:12px}.task-field{display:grid;gap:8px;margin-top:12px}.task-field label{font-weight:800;color:#195d66;font-size:14px}.task-field textarea{border:1px solid #cbe4e6;background:#fff;border-radius:15px;padding:12px;resize:vertical;min-height:85px;color:#213c42}.passport-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:15px;flex-wrap:wrap}.passport-actions>span{font-size:13px;font-weight:750;color:#336b6d}.passport-copy{font-size:13px}.footer{padding:24px 0 28px;border-top:1px solid #e1eef0;margin:15px 0 0;display:flex;justify-content:space-between;gap:14px;align-items:center}.footer strong{font-size:14px;color:#23696b}.footer span{font-size:12px;color:var(--muted)}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#125e66;color:#fff;border:1px solid #64efd2;padding:12px 19px;border-radius:15px;box-shadow:0 12px 25px #00505d30;opacity:0;pointer-events:none;z-index:40;transition:opacity .2s;font-weight:740;max-width:90vw}.toast.visible{opacity:1}.prompt-print{display:none}
+@keyframes copypop{0%{transform:scale(1)}45%{transform:scale(1.065)}100%{transform:scale(1)}}@keyframes shimmer{from{left:-35%}to{left:135%}}
+@media (max-width:800px){.hero{grid-template-columns:1fr 170px}.hero-art{width:170px;height:170px}.intro-grid{grid-template-columns:1fr}.intro-cell{padding:11px 14px}.intro-cell p{margin-top:6px}.check-layout{grid-template-columns:1fr}}
+@media (max-width:560px){.hero::before{right:0}.page{padding:16px 12px 20px}.hero{grid-template-columns:1fr;min-height:auto;margin-bottom:21px}.hero-art{display:none}.hero h1{font-size:clamp(36px,11vw,52px)}.hero .glass-word{border-radius:15px}.hero-sub{font-size:16px}.small-head{margin-bottom:21px}.stage{padding:16px 13px;border-radius:21px}.stage-top{gap:12px}.number-pill{min-width:52px;height:52px;border-radius:17px;font-size:19px}.stage h2{font-size:23px}.choice-grid{grid-template-columns:1fr}.editor-head{padding:12px}.editor-hint{display:none}.prompt-editor{padding:15px;font-size:13px}.action-bar{align-items:stretch}.action-hint{max-width:unset}.copy-btn{width:100%}.passport-actions{align-items:stretch}.footer{flex-direction:column;align-items:flex-start}.top-tools{margin-bottom:20px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@page{size:A4;margin:13mm}
+@media print{body{background:#fff}.page{max-width:none;padding:0}.hero{margin-bottom:16px;min-height:auto;padding:0}.hero-art,.top-tools,.copy-btn,.toast,.passport-actions,.action-hint{display:none!important}.hero h1{font-size:30px;letter-spacing:-.03em}.hero-sub{font-size:12px}.small-head{margin-bottom:10px}.stage{box-shadow:none;border:1px solid #c3d5d9;padding:12px 13px;margin-bottom:15px;overflow:visible;break-before:page}.stage:first-of-type{break-before:auto}.stage h2{font-size:20px}.stage-top{break-after:avoid}.number-pill{width:38px;min-width:38px;height:38px;border-radius:9px;font-size:14px}.intro-grid{gap:5px;margin-bottom:10px}.intro-cell{box-shadow:none;padding:8px}.intro-cell p{font-size:10px}.intro-k{font-size:10px}.prompt-editor,.editor-head,.action-bar{display:none!important}.prompt-print{display:block!important;white-space:pre-wrap;font:10.5px/1.42 Arial,Helvetica,sans-serif;overflow-wrap:anywhere;padding:12px;color:#111}.editor-shell{border:1px solid #d8e8ea}.passport{box-shadow:none;padding:12px;margin-bottom:10px}.check-layout{grid-template-columns:repeat(2,1fr);gap:6px}.check-group{padding:7px}.choice-grid{gap:4px}.pick{font-size:9px;min-height:auto;padding:4px}.footer{padding-top:10px}.footer strong{font-size:10px}fieldset,.intro-cell{break-inside:avoid}}
+
+/* Развёрнутый форматированный редактор промптов */
+body{font-size:17px;line-height:1.55}
+.intro-cell p{font-size:15.5px;line-height:1.55}
+.intro-k{font-size:13px}
+.pick{font-size:14.5px;line-height:1.35}
+.check-group legend{font-size:16px}
+.editor-hint,.action-hint{font-size:13px}
+.prompt-rich{width:100%;min-height:240px;padding:24px 27px;background:#fff;color:#213a42;font:17.5px/1.64 Inter,"Segoe UI",Arial,Helvetica,sans-serif;overflow-wrap:anywhere;cursor:text;outline:none;}
+.prompt-rich:focus{box-shadow:inset 0 0 0 3px #b8f2e8;background:#fffffe}
+.prompt-rich h1,.prompt-rich h2,.prompt-rich h3{color:#0a5863;letter-spacing:-.02em;font-weight:850;line-height:1.22;margin:1.25em 0 .55em}
+.prompt-rich h2{font-size:23px}
+.prompt-rich h3{font-size:20px}
+.prompt-rich h1{font-size:26px}
+.prompt-rich p{margin:.65em 0 1.05em}
+.prompt-rich strong{color:#084e5b;font-weight:850}
+.prompt-rich ul,.prompt-rich ol{padding-left:1.55em;margin:.5em 0 1.15em}
+.prompt-rich li{padding-left:.2em;margin:.22em 0}
+.prompt-rich li::marker{color:#079c93;font-weight:750}
+.prompt-rich a{color:#007d91;text-decoration:underline;text-underline-offset:3px}
+.prompt-rich table{width:100%;border-collapse:collapse;margin:1em 0}
+.prompt-rich th,.prompt-rich td{border:1px solid #d6e9ed;padding:9px;text-align:left}
+.prompt-rich blockquote{border-left:4px solid #16bda5;padding-left:14px;margin:1em 0;color:#3a626c}
+.auto-kitchen{background:linear-gradient(135deg,#effffb,#f5fbff);border:1px solid #b9e8e2;border-radius:19px;padding:16px 21px;margin:14px 0 22px;cursor:default}
+.auto-kitchen h2{margin:.2em 0 .6em;font-size:21px;color:#087b74}
+.auto-kitchen h3{margin:1.1em 0 .3em;font-size:18px}
+.auto-kitchen ul{margin:.2em 0 .6em}
+.auto-kitchen .auto-empty{font-size:15px;color:#587780;margin:0}
+.auto-kitchen .auto-intro{font-size:13px;color:#4d7e81;margin:0 0 8px}
+@media(max-width:640px){body{font-size:16px}.prompt-rich{padding:18px 16px;font-size:16.5px;line-height:1.6}.prompt-rich h2{font-size:21px}.intro-cell p{font-size:15px}}
+@media print{.prompt-rich,.editor-head,.action-bar{display:none!important}.prompt-print{display:block!important;white-space:normal!important;font:11.5px/1.5 Arial,Helvetica,sans-serif!important}.prompt-print h2{font-size:15px;color:#075a63}.prompt-print strong{font-weight:700}.prompt-print ul,.prompt-print ol{padding-left:21px}.prompt-print p{margin:5px 0 8px}.auto-kitchen{break-inside:avoid;box-shadow:none}}
+
+/* New chain: legible content and seamless embedded selections */
+.prompt-rich p{margin:.66em 0 1em}.prompt-rich ul,.prompt-rich ol{padding-left:1.5em}
+#prompt-4 li,#prompt-5 li{line-height:1.53}
+
+/* Выбор «Другое» открывает поле для уточнения */
+.choice-wrap:has(input[data-choice]:not(:checked)) > .other-input {display:none}
+.choice-wrap:has(input[data-choice]:checked) > .other-input {display:block}
+</style></head>
+<body><main class="page">
+<div class="small-head"><span aria-hidden="true" class="head-bar"></span>Исследовательская компетентность в повседневной жизни</div>
+<header class="hero"><div><h1>РАЗУМНАЯ<br/><span class="glass-word">УБОРКА КУХНИ</span></h1></div><div aria-hidden="true" class="hero-art"><img alt="" src="data:image/webp;base64,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"/></div></header>
+<div class="top-tools"><span>Пройдите шаги по порядку · Заполните паспорт кухни · Скопируйте готовые запросы</span><button class="print-btn" id="print-btn" type="button">Печать / PDF · А4</button></div>
+<section aria-labelledby="title-1" class="stage" id="step-1">
+<div class="stage-top">
+<div aria-hidden="true" class="number-pill">01</div>
+<div class="stage-title">
+<p class="stage-eyebrow">ПРОМПТ № 1 · ШАГ 1 ИЗ 5</p>
+<h2 id="title-1">Исследуем рекомендации по уборке кухни</h2>
+</div>
+</div>
+<div class="intro-grid">
+<div class="intro-cell"><span class="intro-k">Для чего</span><p>Исследовать книгу и открытые материалы эксперта, извлечь рекомендации по уборке кухни.</p></div>
+<div class="intro-cell"><span class="intro-k">Результат</span><p>Реестр «Источник — Страница или ссылка — О чём — Главное».</p></div>
+<div class="intro-cell"><span class="intro-k">Пояснение</span><p>Перед отправкой прикрепите электронную книгу (если она у вас есть).</p></div>
+</div>
+<div class="editor-shell">
+<div class="editor-head"><div><span class="editor-dot"></span><strong>Промпт</strong><span class="editor-hint">Можно редактировать текст</span></div><span class="editor-tag">01 / 05</span></div>
+<div aria-label="Редактируемый текст промпта № 1" aria-multiline="true" class="prompt-rich" contenteditable="true" id="prompt-1" role="textbox" spellcheck="true"><p><strong>Твоя роль:</strong> исследователь и аналитик источников.</p>
+<p>Изучи прикреплённую книгу «Лёгкость Быт и Я» и доступные открытые материалы автора на YouTube, в Telegram и на официальном сайте.</p>
+<p>Найди все материалы об уборке кухни:</p>
+<ul>
+<li>Принципы, правила, последовательность и профилактика.</li>
+<li>Классификация загрязнений и способы их удаления.</li>
+<li>Инвентарь, домашние и покупные чистящие средства.</li>
+<li>Составы средств и условия применения.</li>
+<li>Уход за фасадами, столешницами, фартуками, мойками, смесителями.</li>
+<li>Очистка плиты, духовки, вытяжки, холодильника, посудомоечной машины и другой техники.</li>
+<li>Уход за кастрюлями, сковородами, крышками, формами, досками и кухонной утварью.</li>
+</ul>
+<p><strong>Составь реестр:</strong></p>
+<p>Источник | Страница или ссылка | О чём | Главное</p>
+<p>Требования:</p>
+<ul>
+<li>Указывай точные страницы книги и ссылки на конкретные публикации.</li>
+<li>Кратко передавай рекомендации автора, включая домашние рецепты и ограничения.</li>
+<li>Отделяй рекомендации автора от своей интерпретации.</li>
+<li>Не выдумывай содержание недоступных видео.</li>
+<li>Не проводи пока научную проверку и не подбирай товары.</li>
+</ul>
+<p>В конце сгруппируй найденные материалы по основным задачам уборки кухни.</p>
+</div>
+<div aria-hidden="true" class="prompt-print" id="print-1"></div>
+<div class="action-bar"><span class="action-hint">Копируется весь текст с вашими правками</span>
+<button aria-label="Скопировать промпт № 1" class="copy-btn" data-copy="1" type="button"><span aria-hidden="true" class="copy-icon">▤</span><span class="copy-label">Скопировать промпт</span><span aria-hidden="true" class="check-icon">✓</span></button>
+</div>
+</div>
+</section><section aria-labelledby="title-2" class="stage" id="step-2">
+<div class="stage-top">
+<div aria-hidden="true" class="number-pill">02</div>
+<div class="stage-title">
+<p class="stage-eyebrow">ПРОМПТ № 2 · ШАГ 2 ИЗ 5</p>
+<h2 id="title-2">Паспорт моей кухни</h2>
+</div>
+</div>
+<div class="intro-grid">
+<div class="intro-cell"><span class="intro-k">Для чего</span><p>Определить материалы, покрытия, оборудование, инвентарь и типичные загрязнения, чтобы не получать универсальные советы для абстрактной кухни.</p></div>
+<div class="intro-cell"><span class="intro-k">Результат</span><p>Паспорт кухни — перечень поверхностей, устройств, предметов и задач ухода.</p></div>
+<div class="intro-cell"><span class="intro-k">Пояснение</span><p>Отметьте подходящие пункты: выбор сразу встраивается в текст промпта. Если для дальнейших рекомендаций не хватает данных, ИИ сначала задаёт уточняющие вопросы.</p></div>
+</div>
+<section aria-labelledby="passport-title" class="passport">
+<div class="passport-title-row"><div><p class="passport-overline">НАСТРОЙТЕ ПОД СЕБЯ</p><h3 id="passport-title">Что есть на моей кухне?</h3><p>Отметьте подходящие варианты. В промпт попадут только выбранные пункты.</p></div><div aria-hidden="true" class="glass-mini">✓</div></div>
+<div class="check-layout"><fieldset class="check-group"><legend>Фасады</legend><div class="choice-grid"><div class="choice-wrap"><label class="pick"><input data-choice="1" data-group="0" data-original="МДФ в плёнке ПВХ" type="checkbox"/><span>МДФ в плёнке ПВХ</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="2" data-group="0" data-original="Окрашенная эмаль" type="checkbox"/><span>Окрашенная эмаль</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="3" data-group="0" data-original="Пластик / HPL" type="checkbox"/><span>Пластик / HPL</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="4" data-group="0" data-original="Акрил / глянец" type="checkbox"/><span>Акрил / глянец</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="5" data-group="0" data-original="Матовые / soft-touch" type="checkbox"/><span>Матовые / soft-touch</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="6" data-group="0" data-original="Шпон / массив дерева" type="checkbox"/><span>Шпон / массив дерева</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="7" data-group="0" data-original="Стекло / металл" type="checkbox"/><span>Стекло / металл</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="8" data-group="0" data-original="Материал неизвестен" type="checkbox"/><span>Материал неизвестен</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="9" data-group="0" data-original="Другое: [УКАЗАТЬ]" type="checkbox"/><span>Другое</span></label><input aria-label="Другое: Фасады" class="other-input" data-other="9" placeholder="Укажите вариант" type="text"/></div></div></fieldset><fieldset class="check-group"><legend>Столешница</legend><div class="choice-grid"><div class="choice-wrap"><label class="pick"><input data-choice="10" data-group="1" data-original="ЛДСП / HPL" type="checkbox"/><span>ЛДСП / HPL</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="11" data-group="1" data-original="Кварцевый агломерат" type="checkbox"/><span>Кварцевый агломерат</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="12" data-group="1" data-original="Акриловый искусственный камень" type="checkbox"/><span>Акриловый искусственный камень</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="13" data-group="1" data-original="Натуральный камень" type="checkbox"/><span>Натуральный камень</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="14" data-group="1" data-original="Дерево" type="checkbox"/><span>Дерево</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="15" data-group="1" data-original="Нержавеющая сталь" type="checkbox"/><span>Нержавеющая сталь</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="16" data-group="1" data-original="Другое / неизвестно" type="checkbox"/><span>Другое / неизвестно</span></label></div></div></fieldset><fieldset class="check-group"><legend>Фартук</legend><div class="choice-grid"><div class="choice-wrap"><label class="pick"><input data-choice="17" data-group="2" data-original="Плитка и швы" type="checkbox"/><span>Плитка и швы</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="18" data-group="2" data-original="Стекло" type="checkbox"/><span>Стекло</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="19" data-group="2" data-original="Металл" type="checkbox"/><span>Металл</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="20" data-group="2" data-original="Камень" type="checkbox"/><span>Камень</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="21" data-group="2" data-original="Панель / окрашенная поверхность" type="checkbox"/><span>Панель / окрашенная поверхность</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="66" data-group="2" data-original="Другое: [УКАЗАТЬ]" type="checkbox"/><span>Другое</span></label><input aria-label="Другое: Фартук" class="other-input" data-other="66" placeholder="Укажите вариант" type="text"/></div><div class="choice-wrap"><label class="pick"><input data-choice="22" data-group="2" data-original="Неизвестно" type="checkbox"/><span>Неизвестно</span></label></div></div></fieldset><fieldset class="check-group"><legend>Мойка</legend><div class="choice-grid"><div class="choice-wrap"><label class="pick"><input data-choice="23" data-group="3" data-original="Нержавеющая сталь" type="checkbox"/><span>Нержавеющая сталь</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="24" data-group="3" data-original="Кварцевый / гранитный композит" type="checkbox"/><span>Кварцевый / гранитный композит</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="25" data-group="3" data-original="Керамика / эмаль" type="checkbox"/><span>Керамика / эмаль</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="26" data-group="3" data-original="Акрил / другой материал" type="checkbox"/><span>Акрил / другой материал</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="27" data-group="3" data-original="Неизвестно" type="checkbox"/><span>Неизвестно</span></label></div></div></fieldset><fieldset class="check-group"><legend>Смеситель</legend><div class="choice-grid"><div class="choice-wrap"><label class="pick"><input data-choice="28" data-group="4" data-original="Хромированный" type="checkbox"/><span>Хромированный</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="29" data-group="4" data-original="Чёрный / цветной" type="checkbox"/><span>Чёрный / цветной</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="30" data-group="4" data-original="Матовый" type="checkbox"/><span>Матовый</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="67" data-group="4" data-original="Другое: [УКАЗАТЬ]" type="checkbox"/><span>Другое</span></label><input aria-label="Другое: Смеситель" class="other-input" data-other="67" placeholder="Укажите вариант" type="text"/></div><div class="choice-wrap"><label class="pick"><input data-choice="31" data-group="4" data-original="Неизвестно" type="checkbox"/><span>Неизвестно</span></label></div></div></fieldset><fieldset class="check-group"><legend>Техника</legend><div class="choice-grid"><div class="choice-wrap"><label class="pick"><input data-choice="32" data-group="5" data-original="Газовая плита" type="checkbox"/><span>Газовая плита</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="33" data-group="5" data-original="Электрическая / стеклокерамическая" type="checkbox"/><span>Электрическая / стеклокерамическая</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="34" data-group="5" data-original="Индукционная" type="checkbox"/><span>Индукционная</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="35" data-group="5" data-original="Духовка обычная" type="checkbox"/><span>Духовка обычная</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="36" data-group="5" data-original="Духовка с пиролизом / катализом / паровой очисткой" type="checkbox"/><span>Духовка с пиролизом / катализом / паровой очисткой</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="37" data-group="5" data-original="Вытяжка с металлическим фильтром" type="checkbox"/><span>Вытяжка с металлическим фильтром</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="38" data-group="5" data-original="Посудомоечная машина" type="checkbox"/><span>Посудомоечная машина</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="39" data-group="5" data-original="Микроволновая печь" type="checkbox"/><span>Микроволновая печь</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="40" data-group="5" data-original="Холодильник / морозильник" type="checkbox"/><span>Холодильник / морозильник</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="41" data-group="5" data-original="Мультиварка / аэрогриль" type="checkbox"/><span>Мультиварка / аэрогриль</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="42" data-group="5" data-original="Кофемашина / чайник" type="checkbox"/><span>Кофемашина / чайник</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="43" data-group="5" data-original="Другая техника: [УКАЗАТЬ]" type="checkbox"/><span>Другая техника</span></label><input aria-label="Другое: Техника" class="other-input" data-other="43" placeholder="Укажите вариант" type="text"/></div></div></fieldset><fieldset class="check-group"><legend>Посуда и принадлежности</legend><div class="choice-grid"><div class="choice-wrap"><label class="pick"><input data-choice="44" data-group="6" data-original="Кастрюли из нержавеющей стали" type="checkbox"/><span>Кастрюли из нержавеющей стали</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="45" data-group="6" data-original="Эмалированная посуда" type="checkbox"/><span>Эмалированная посуда</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="46" data-group="6" data-original="Алюминий" type="checkbox"/><span>Алюминий</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="47" data-group="6" data-original="Чугун" type="checkbox"/><span>Чугун</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="48" data-group="6" data-original="Антипригарное покрытие" type="checkbox"/><span>Антипригарное покрытие</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="49" data-group="6" data-original="Керамическое покрытие" type="checkbox"/><span>Керамическое покрытие</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="50" data-group="6" data-original="Стеклянные крышки" type="checkbox"/><span>Стеклянные крышки</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="51" data-group="6" data-original="Металлические крышки" type="checkbox"/><span>Металлические крышки</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="52" data-group="6" data-original="Силиконовые формы и уплотнители" type="checkbox"/><span>Силиконовые формы и уплотнители</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="53" data-group="6" data-original="Деревянные доски" type="checkbox"/><span>Деревянные доски</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="54" data-group="6" data-original="Пластиковые доски" type="checkbox"/><span>Пластиковые доски</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="55" data-group="6" data-original="Другое: [УКАЗАТЬ]" type="checkbox"/><span>Другое</span></label><input aria-label="Другое: Посуда и принадлежности" class="other-input" data-other="55" placeholder="Укажите вариант" type="text"/></div></div></fieldset><fieldset class="check-group"><legend>Загрязнения</legend><div class="choice-grid"><div class="choice-wrap"><label class="pick"><input data-choice="56" data-group="7" data-original="Свежий жир" type="checkbox"/><span>Свежий жир</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="57" data-group="7" data-original="Застарелый жир" type="checkbox"/><span>Застарелый жир</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="58" data-group="7" data-original="Пригоревшие остатки / нагар" type="checkbox"/><span>Пригоревшие остатки / нагар</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="59" data-group="7" data-original="Известковый налёт" type="checkbox"/><span>Известковый налёт</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="60" data-group="7" data-original="Ржавые следы" type="checkbox"/><span>Ржавые следы</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="61" data-group="7" data-original="Следы воды и моющих средств" type="checkbox"/><span>Следы воды и моющих средств</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="62" data-group="7" data-original="Пищевые пятна" type="checkbox"/><span>Пищевые пятна</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="63" data-group="7" data-original="Пыль / крошки" type="checkbox"/><span>Пыль / крошки</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="64" data-group="7" data-original="Запахи" type="checkbox"/><span>Запахи</span></label></div><div class="choice-wrap"><label class="pick"><input data-choice="65" data-group="7" data-original="Другое: [УКАЗАТЬ]" type="checkbox"/><span>Другое</span></label><input aria-label="Другое: Загрязнения" class="other-input" data-other="65" placeholder="Укажите вариант" type="text"/></div></div></fieldset></div>
+<div class="task-field"><label for="difficult">Самые трудоёмкие задачи</label><textarea id="difficult" placeholder="Например: жир на вытяжке, нагар в духовке, налёт на чёрной мойке" rows="3"></textarea></div>
+<div class="passport-actions"><span id="passport-stats">Выбрано: 0</span></div>
+</section>
+<div class="editor-shell">
+<div class="editor-head"><div><span class="editor-dot"></span><strong>Промпт</strong><span class="editor-hint">Можно редактировать текст</span></div><span class="editor-tag">02 / 05</span></div>
+<div aria-label="Редактируемый текст промпта № 2" aria-multiline="true" class="prompt-rich" contenteditable="true" id="prompt-2" role="textbox" spellcheck="true"><p><strong>Твоя роль:</strong> помощник по инвентаризации кухни.</p>
+<p>Помоги определить материалы, покрытия и оборудование моей кухни. Используй выбранные в блоке «Что есть на моей кухне?» материалы, покрытия и оборудование.</p>
+<section aria-label="Автоматически выбранные характеристики кухни" class="auto-kitchen" contenteditable="false" id="auto-kitchen"></section><h2>Твоя задача</h2>
+<p>На основе моих отметок составь паспорт кухни:</p>
+<p>Поверхность или устройство → Материал → Типичные загрязнения → Особенности ухода → Что требуется уточнить.</p>
+<p>Не рекомендуй пока средства. Если материал или покрытие неизвестны, укажи, как их определить.</p>
+<p><strong>Перед переходом к рекомендациям:</strong> если для промпта № 3 не хватает сведений о материалах, покрытиях, моделях техники или условиях ухода, задай мне конкретные уточняющие вопросы. Сначала уточни данные, затем дополни паспорт.</p></div>
+<div aria-hidden="true" class="prompt-print" id="print-2"></div>
+<div class="action-bar"><span class="action-hint">При копировании выбранные пункты заменят чек-лист в тексте</span>
+<button aria-label="Скопировать промпт № 2" class="copy-btn" data-copy="2" type="button"><span aria-hidden="true" class="copy-icon">▤</span><span class="copy-label">Скопировать промпт</span><span aria-hidden="true" class="check-icon">✓</span></button>
+</div>
+</div>
+</section><section aria-labelledby="title-3" class="stage" id="step-3">
+<div class="stage-top">
+<div aria-hidden="true" class="number-pill">03</div>
+<div class="stage-title">
+<p class="stage-eyebrow">ПРОМПТ № 3 · ШАГ 3 ИЗ 5</p>
+<h2 id="title-3">Как правильно ухаживать за моей кухней? Создаём систему</h2>
+</div>
+</div>
+<div class="intro-grid">
+<div class="intro-cell"><span class="intro-k">Для чего</span><p>Сопоставить рекомендации из реестра с конкретными поверхностями и оборудованием, проверить основания и выбрать способы очистки.</p></div>
+<div class="intro-cell"><span class="intro-k">Результат</span><p>Персональный справочник ухода с классификацией загрязнений, кругом Зиннера, домашними и покупными средствами, необходимыми компонентами и ограничениями.</p></div>
+<div class="intro-cell"><span class="intro-k">Пояснение</span><p>Если материала или модели не удалось уточнить, ИИ использует наиболее распространённый вариант как обозначенное допущение. Рискованные способы требуют подтверждения совместимости.</p></div>
+</div>
+<div class="editor-shell">
+<div class="editor-head"><div><span class="editor-dot"></span><strong>Промпт</strong><span class="editor-hint">Можно редактировать текст</span></div><span class="editor-tag">03 / 05</span></div>
+<div aria-label="Редактируемый текст промпта № 3" aria-multiline="true" class="prompt-rich" contenteditable="true" id="prompt-3" role="textbox" spellcheck="true"><p><strong>Твоя роль:</strong> исследователь, аналитик бытовой химии и критик рекомендаций.</p>
+<p>Используй реестр рекомендаций и паспорт моей кухни. <strong>Приоритет — конкретные способы, рецепты и приёмы из реестра</strong>, а не усреднённые советы из интернета.</p>
+<h3>1. Уточни условия</h3>
+<p>Если данных недостаточно, используй ответы на вопросы из промпта № 2. Если сведения всё ещё отсутствуют, выбери наиболее распространённый вариант <strong>как явно обозначенное допущение</strong> и построй для него осторожные рекомендации. Не выдавай предполагаемое покрытие за установленное; потенциально повреждающие способы разрешай только после подтверждения совместимости.</p>
+<h3>2. Подбери уход для моей кухни</h3>
+<p>Для каждого выбранного объекта:</p>
+<ul>
+<li>классифицируй загрязнения (жир, нагар, налёт, пятна и др.) и объясни механизм удаления;</li>
+<li>найди <strong>конкретный способ из реестра</strong>, включая редкие частные случаи: например, старый налёт под ободком стеклянной крышки;</li>
+<li>для домашних составов приведи <strong>ингредиенты, точные пропорции, приготовление, нанесение, выдержку и смывание</strong>, только если это действительно указано в источнике; иначе отметь пробел;</li>
+<li>для покупных средств укажи класс, значимые компоненты, нежелательные свойства, порядок использования и минимальный инвентарь;</li>
+<li>примени круг Зиннера: <strong>химия → время → температура → механика</strong>, с ограничениями для материала и техники.</li>
+</ul>
+<p>Отдельно учти фасады, фартук, столешницу, мойку, смеситель, плиту, духовку, вытяжку, имеющуюся технику, кастрюли, сковороды, <strong>крышки</strong> и доски.</p>
+<h3>3. Проверь применимость</h3>
+<p>Сверь существенные рекомендации с научными и техническими данными к ноябрю 2026 года и инструкциями производителей. Отдельно проверь кислоты, щёлочи, абразивы, смесь компонентов и средства для ПММ вне штатного назначения. Не предлагай несовместимые смеси. Указывай расхождения с рекомендациями из реестра, а не скрывай их.</p>
+<h3>4. Найди необходимое на Ozon</h3>
+<p><strong>Только для обоснованных покупок:</strong> проверь точный товар, состав, бренд, продавца, актуальную цену, дату, изображение и прямую ссылку. Сравни сопоставимые предложения с учётом цены за единицу и доставки. Не называй непроверенного продавца надёжным и не выдумывай ссылки.</p>
+<p><strong>Результат:</strong> матрица «Объект → загрязнение → рекомендация из реестра → домашний рецепт или покупное средство → четыре фактора Зиннера → инвентарь → ограничения → проверка источников». В конце — минимальный набор без дублирующих покупок и подтверждённые предложения Ozon. Отдельно отметь допущения и неизвестные данные.</p>
+</div>
+<div aria-hidden="true" class="prompt-print" id="print-3"></div>
+<div class="action-bar"><span class="action-hint">Копируется весь текст с вашими правками</span>
+<button aria-label="Скопировать промпт № 3" class="copy-btn" data-copy="3" type="button"><span aria-hidden="true" class="copy-icon">▤</span><span class="copy-label">Скопировать промпт</span><span aria-hidden="true" class="check-icon">✓</span></button>
+</div>
+</div>
+</section><section aria-labelledby="title-4" class="stage" id="step-4">
+<div class="stage-top">
+<div aria-hidden="true" class="number-pill">04</div>
+<div class="stage-title">
+<p class="stage-eyebrow">ПРОМПТ № 4 · ШАГ 4 ИЗ 5</p>
+<h2 id="title-4">Создаём карточки «Разумная уборка кухни»</h2>
+</div>
+</div>
+<div class="intro-grid">
+<div class="intro-cell"><span class="intro-k">Для чего</span><p>Преобразовать исследованные рекомендации в практические карточки для своей кухни.</p></div>
+<div class="intro-cell"><span class="intro-k">Результат</span><p>Ровно 10 карточек: короткие решения для моей кухни, изображения инвентаря и средств, без имени эксперта и списка источников.</p></div>
+<div class="intro-cell"><span class="intro-k">Пояснение</span><p>Сначала утверждаем 10 текстов, затем создаём изображения. Обоснования остаются для редакционной проверки, а не на карточках.</p></div>
+</div>
+<div class="editor-shell">
+<div class="editor-head"><div><span class="editor-dot"></span><strong>Промпт</strong><span class="editor-hint">Можно редактировать текст</span></div><span class="editor-tag">04 / 05</span></div>
+<div aria-label="Редактируемый текст промпта № 4" aria-multiline="true" class="prompt-rich" contenteditable="true" id="prompt-4" role="textbox" spellcheck="true"><p><strong>Твоя роль:</strong> научный редактор и графический дизайнер.</p>
+<p>Используй проверенную матрицу ухода и паспорт моей кухни. Создай <strong>ровно 10 карточек</strong>, коротких, практических, с решениями и рабочими схемами, без длинных объяснений.</p>
+<h3>Состав комплекта</h3>
+<ol>
+<li><strong>Разумная уборка</strong> — обложка.<p>Некрупно: «Уборка как система» и «Исследовательская компетентность в повседневной жизни».</p><h2>Заголовок</h2><h3>Главный принцип</h3></li>
+<li><strong>Инвентарь для уборки кухни</strong> — минимальный набор по моему паспорту; изображения конкретных инструментов.</li>
+<li><strong>Средства для уборки</strong> — необходимое по моему паспорту; изображения покупных средств, а для домашних смесей — понятное обозначение и ингредиенты.</li>
+<li><strong>Какие бывают загрязнения</strong> — классификация и логика выбора способа.</li>
+<li><strong>4 фактора чистоты — Круг Зиннера</strong> — химия, время, температура, механика.</li>
+<li><strong>Фасады, столешница и фартук</strong> — чем и как очищать; что исключить.</li>
+<li><strong>Мойка и смеситель</strong> — последовательность ухода и ограничения.</li>
+<li><strong>Плита и духовка</strong> — жир, нагар, подходящий инвентарь и способы.</li>
+<li><strong>Кастрюли, сковороды, доски</strong> — также крышки, в том числе специфические труднодоступные места.</li>
+<li><strong>Бытовая техника</strong> — только имеющаяся у меня (например, аэрогриль, кофемашина, ПММ).</li>
+</ol>
+<h3>Правила содержания</h3>
+<ul>
+<li><strong>Один вопрос — одна практическая схема</strong>: объект/загрязнение → чем → как → чего избегать.</li>
+<li>Текст минимальный; не дублируй объяснения. Нужный инвентарь и средства визуализируй.</li>
+<li>В карточках <strong>не показывай имена авторов и источники</strong>. При этом основывай каждое решение на проверенных рекомендациях; фиксируй основания отдельно для редакционной проверки, не на изображениях.</li>
+<li>Не выдавай условные допущения о материалах за факты и не предлагай потенциально повреждающий способ без подтверждения совместимости.</li>
+</ul>
+<h3>Дизайн — Prism Clean 3D</h3>
+<p>Квадрат 1:1; белый фон; прозрачные 3D-стекло и капли, изумрудно-бирюзово-голубые акценты, преломления и мягкие тени. Крупный sans-serif, контраст, мало декора; основной текст — на почти непрозрачной светлой подложке.</p>
+<p><strong>Порядок:</strong> сначала покажи сценарий и готовые тексты всех 10 карточек для утверждения; только потом создавай отдельные изображения. Проверь орфографию, точность, применимость и читаемость.</p>
+
+</div>
+<div aria-hidden="true" class="prompt-print" id="print-4"></div>
+<div class="action-bar"><span class="action-hint">Копируется весь текст с вашими правками</span>
+<button aria-label="Скопировать промпт № 4" class="copy-btn" data-copy="4" type="button"><span aria-hidden="true" class="copy-icon">▤</span><span class="copy-label">Скопировать промпт</span><span aria-hidden="true" class="check-icon">✓</span></button>
+</div>
+</div>
+</section>
+<section aria-labelledby="title-5" class="stage" id="step-5">
+<div class="stage-top">
+<div aria-hidden="true" class="number-pill">05</div>
+<div class="stage-title"><p class="stage-eyebrow">ПРОМПТ № 5 · ШАГ 5 ИЗ 5</p>
+<h2 id="title-5">Собираем 10 карточек в интерактивный HTML-лист</h2></div>
+</div>
+<div class="intro-grid">
+<div class="intro-cell"><span class="intro-k">Для чего</span><p>Собрать утверждённые карточки в HTML, если LLM не может качественно создать графические карточки с текстом.</p></div>
+<div class="intro-cell"><span class="intro-k">Результат</span><p>Интерактивный HTML-лист с теми же 10 карточками, подробностями ухода, изображениями товаров и проверенными предложениями Ozon.</p></div>
+<div class="intro-cell"><span class="intro-k">Пояснение</span><p>После утверждения карточек. В HTML показываются способы и покупки, но не имя эксперта и не источники; непроверенные предложения не добавляются.</p></div>
+</div>
+<div class="editor-shell">
+<div class="editor-head"><div><span class="editor-dot"></span><strong>Промпт</strong><span class="editor-hint">Можно редактировать текст</span></div><span class="editor-tag">05 / 05</span></div>
+<div aria-label="Редактируемый текст промпта № 5" aria-multiline="true" class="prompt-rich" contenteditable="true" id="prompt-5" role="textbox" spellcheck="true"><p><strong>Твоя роль:</strong> UX/UI-дизайнер и разработчик HTML/CSS/JavaScript.</p>
+<p>Из утверждённого сценария промпта № 4 создай <strong>отдельный интерактивный HTML-лист с теми же 10 карточками</strong> в исходном порядке. Он заменяет изображения, если LLM не может точно генерировать текст на картинках.</p>
+<h3>Содержание</h3>
+<ul>
+<li>Сохрани заголовки, краткие решения и схемы всех карточек <strong>без изменения их смысла</strong>.</li>
+<li>Под каждой карточкой добавь раскрываемые <strong>подробности применения</strong>: порядок действий, домашний рецепт с точными пропорциями (если подтверждён источником), покупное средство, состав, инвентарь, круг Зиннера там, где нужен, ограничения и уход за покрытием.</li>
+<li>Для рекомендаций учитывай именно исследованные экспертные приёмы, включая частные случаи (например, налёт под ободком стеклянной крышки), но <strong>не упоминай автора и не выводи источники в готовом листе</strong>.</li>
+<li>Техника — только из паспорта кухни. Не добавляй чужие устройства и лишние покупки.</li>
+</ul>
+<h3>Подбор товаров Ozon</h3>
+<p>Для <strong>каждого рекомендованного к покупке</strong> средства или инструмента обязательно покажи <strong>найденную фотографию именно этого товара</strong>, название, производителя, проверенного продавца, цену и дату проверки, прямую кликабельную ссылку на карточку Ozon. Проверь соответствие составу/назначению и сравни цену с сопоставимыми предложениями и доставкой. Если продавец, изображение, цена или ссылка не проверяются, прямо укажи это и <strong>не создавай фиктивную карточку покупки</strong>. Домашние смеси обозначай отдельной иллюстрацией ингредиентов, а не упаковкой вымышленного товара.</p>
+<h3>Дизайн и функции</h3>
+<p><strong>Prism Clean 3D:</strong> белый фон, прозрачные стеклянные 3D-панели, капли воды, аква-голубая/изумрудная гамма, лёгкие блики. Текст на светлой непрозрачной основе; крупный sans-serif. Адаптация под телефон и печать А4.</p>
+<p>Добавь переходы между карточками, режим «Все карточки», раскрытие подробностей, копирование текста карточки с анимацией и печать/PDF.</p>
+<h3>Результат и проверка</h3>
+<p>Предоставь один рабочий HTML-файл со встроенными стилями и логикой. Встраивай проверенные изображения товаров по возможности автономно; если внешние изображения требуют интернета, явно укажи ограничение. Проверь текст, ссылки, управление, адаптивность и печать. Не утверждай, что тестировал то, чего не проверял.</p>
+</div>
+<div aria-hidden="true" class="prompt-print" id="print-5"></div>
+<div class="action-bar"><span class="action-hint">Копируется весь текст с вашими правками</span>
+<button aria-label="Скопировать промпт № 5" class="copy-btn" data-copy="5" type="button"><span aria-hidden="true" class="copy-icon">▤</span><span class="copy-label">Скопировать промпт</span><span aria-hidden="true" class="check-icon">✓</span></button>
+</div>
+</div>
+</section>
+<footer class="footer"><strong>© О.Г. Петрова и ИИ</strong><span>Цепочка промптов · Разумная уборка кухни</span></footer>
+</main><div aria-live="polite" class="toast" id="toast" role="status"></div><script>
+(()=>{'use strict';
+ const KEY='petrova_kitchen_prism_clean_rich_v6';
+ const OLD_KEY='petrova_kitchen_prism_clean_rich_v5';
+ const editors=[...document.querySelectorAll('.prompt-rich')];
+ const picks=[...document.querySelectorAll('[data-choice]')];
+ const others=[...document.querySelectorAll('[data-other]')];
+ const difficult=document.getElementById('difficult');
+ const auto=document.getElementById('auto-kitchen');
+ const originalSource=editors.map(e=>e.innerHTML);
+ let toastTimer;
+
+ function store(){
+   const value={html:editors.map(e=>e.innerHTML),checkIds:Object.fromEntries(picks.map(e=>[e.dataset.choice,e.checked])),otherIds:Object.fromEntries(others.map(e=>[e.dataset.other,e.value])),difficult:difficult.value};
+   try{localStorage.setItem(KEY,JSON.stringify(value))}catch(e){}
+ }
+ function restore(){
+   try{
+     let raw=localStorage.getItem(KEY);
+     if(raw){
+       const d=JSON.parse(raw);
+       if(Array.isArray(d.html))editors.forEach((e,i)=>{if(typeof d.html[i]==='string')e.innerHTML=d.html[i]});
+       if(d.checkIds&&typeof d.checkIds==='object')picks.forEach(e=>e.checked=!!d.checkIds[e.dataset.choice]);
+       else if(Array.isArray(d.checks))picks.forEach(e=>{const id=Number(e.dataset.choice);if(id<=65)e.checked=!!d.checks[id-1]});
+       if(d.otherIds&&typeof d.otherIds==='object')others.forEach(e=>{if(typeof d.otherIds[e.dataset.other]==='string')e.value=d.otherIds[e.dataset.other]});
+       else if(Array.isArray(d.other)){
+         const prior=[9,43,55,65];
+         others.forEach(e=>{const ix=prior.indexOf(Number(e.dataset.other));if(ix>=0&&typeof d.other[ix]==='string')e.value=d.other[ix]});
+       }
+       if(typeof d.difficult==='string')difficult.value=d.difficult;
+       return;
+     }
+     raw=localStorage.getItem(OLD_KEY);
+     if(raw){const d=JSON.parse(raw);
+       if(d.checkIds&&typeof d.checkIds==='object')picks.forEach(e=>e.checked=!!d.checkIds[e.dataset.choice]);
+       else if(Array.isArray(d.checks))picks.forEach(e=>{const id=Number(e.dataset.choice);if(id<=65)e.checked=!!d.checks[id-1]});
+       if(d.otherIds&&typeof d.otherIds==='object')others.forEach(e=>{if(typeof d.otherIds[e.dataset.other]==='string')e.value=d.otherIds[e.dataset.other]});
+       else if(Array.isArray(d.other)){
+         const prior=[9,43,55,65];
+         others.forEach(e=>{const ix=prior.indexOf(Number(e.dataset.other));if(ix>=0&&typeof d.other[ix]==='string')e.value=d.other[ix]});
+       }
+       if(typeof d.difficult==='string')difficult.value=d.difficult;
+     }
+   }catch(e){}
+ }
+ function stat(){document.getElementById('passport-stats').textContent='Выбрано: '+picks.filter(e=>e.checked).length+' из '+picks.length}
+ function otherVal(serial){const f=document.querySelector('[data-other="'+serial+'"]');return f?f.value.trim():''}
+ function optionText(el){
+   let v=el.dataset.original;
+   const n=Number(el.dataset.choice);
+   if(v.includes('[УКАЗАТЬ]'))v=v.replace('[УКАЗАТЬ]',otherVal(n)||'вариант не уточнён');
+   return v;
+ }
+ function choiceGroups(){
+   return [...document.querySelectorAll('.check-group')].map(group=>{
+     let selected=[];
+     group.querySelectorAll('[data-choice]').forEach(cb=>{
+       const userText=otherVal(cb.dataset.choice);
+       if(cb.checked) selected.push(optionText(cb));
+       
+     });
+     return {title:group.querySelector('legend').textContent.trim(),selected};
+   }).filter(g=>g.selected.length>0);
+ }
+ function passportText(){
+   let groups=choiceGroups();
+   let parts=groups.map(g=>g.title+':\n'+g.selected.map(x=>'☑ '+x).join('\n'));
+   if(difficult.value.trim())parts.push('Самые трудоёмкие задачи: '+difficult.value.trim());
+   return 'ПАСПОРТ МОЕЙ КУХНИ\n\n'+(parts.join('\n\n')||'Пока не заполнен');
+ }
+ function autoSync(){
+   // The generated block stays inside prompt 2, rather than only being inserted on copying.
+   // Never rewrite surrounding edited prose.
+   let anchor=document.getElementById('auto-kitchen');
+   if(!anchor){
+     anchor=document.createElement('section'); anchor.id='auto-kitchen'; anchor.className='auto-kitchen';
+     anchor.contentEditable='false';
+     const editor=editors[1]; editor.insertBefore(anchor,editor.lastChild);
+   }
+   anchor.replaceChildren();
+   const groups=choiceGroups();
+   const heading=document.createElement('h2');heading.textContent='Мои выбранные характеристики кухни';anchor.appendChild(heading);
+   if(!groups.length&&!difficult.value.trim()){
+     let p=document.createElement('p');p.className='auto-empty';p.textContent='Отметьте подходящие позиции в блоке «Что есть на моей кухне?»';anchor.appendChild(p);return;
+   }
+   groups.forEach(g=>{
+     const h=document.createElement('h3');h.textContent=g.title;anchor.appendChild(h);
+     const list=document.createElement('ul');
+     g.selected.forEach(item=>{let li=document.createElement('li');li.textContent=item;list.appendChild(li)});
+     anchor.appendChild(list);
+   });
+   if(difficult.value.trim()){
+     let p=document.createElement('p');let b=document.createElement('strong');b.textContent='Самые трудоёмкие задачи:';
+     p.append(b,document.createTextNode(' '+difficult.value.trim()));anchor.appendChild(p);
+   }
+ }
+ function inlineMd(n){
+   if(n.nodeType===Node.TEXT_NODE)return n.nodeValue||'';
+   if(n.nodeType!==Node.ELEMENT_NODE)return '';
+   const tag=n.tagName.toLowerCase();
+   if(tag==='br')return '\n';
+   if(n.classList.contains('auto-empty'))return '';
+   let body=Array.from(n.childNodes).map(inlineMd).join('');
+   if(tag==='strong'||tag==='b')return '**'+body+'**';
+   if(tag==='em'||tag==='i')return '*'+body+'*';
+   if(tag==='code')return '`'+body+'`';
+   if(tag==='a')return '['+body+']('+(n.getAttribute('href')||'')+')';
+   return body;
+ }
+ function blockMd(node){
+   if(node.nodeType===Node.TEXT_NODE)return (node.nodeValue||'').trim();
+   if(node.nodeType!==Node.ELEMENT_NODE)return '';
+   const tag=node.tagName.toLowerCase();
+   if(node.classList.contains('auto-empty'))return '';
+   if(tag==='ul'||tag==='ol'){
+     let idx=0;
+     return [...node.children].filter(x=>x.tagName==='LI')
+       .map(li=>{
+         const body=[...li.childNodes].map(child=>{
+           if(child.nodeType===Node.ELEMENT_NODE&&/^H[23]$/.test(child.tagName))return '\n'+blockMd(child);
+           if(child.nodeType===Node.ELEMENT_NODE&&child.tagName==='P')return '\n'+inlineMd(child).trim();
+           return inlineMd(child);
+         }).join('').trim();
+         return (tag==='ul'?'- ':((++idx)+'. '))+body;
+       }).join('\n');
+   }
+   if(tag==='h1'||tag==='h2'||tag==='h3'||tag==='h4')return '#'.repeat(Number(tag[1]))+' '+inlineMd(node).trim();
+   if(tag==='p')return inlineMd(node).trim();
+   if(tag==='section'||tag==='div')return [...node.childNodes].map(blockMd).filter(Boolean).join('\n\n');
+   if(tag==='blockquote')return '> '+inlineMd(node).trim();
+   if(tag==='table')return node.innerText.trim();
+   return inlineMd(node).trim();
+ }
+ function mdFor(i){
+   const e=editors[i-1];
+   return [...e.childNodes].map(blockMd).filter(Boolean).join('\n\n').trim();
+ }
+ function compiledSecond(){return mdFor(2)}
+ function stripCopyright(s){return s.replace(/©\s*О\.\s*Г\.\s*Петрова\s*и\s*ИИ/gi,'').trim()}
+ async function putClipboard(t){
+   if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(t);return true}catch(e){}}
+   const x=document.createElement('textarea');x.value=t;x.style.position='fixed';x.style.left='-9999px';
+   document.body.appendChild(x);x.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}x.remove();return ok;
+ }
+ function toast(t){const box=document.getElementById('toast');box.textContent=t;box.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>box.classList.remove('visible'),3000)}
+ function signal(btn,ok){
+   clearTimeout(btn._timer);btn.classList.remove('copied');
+   if(!ok){toast('Не удалось скопировать. Выделите текст вручную.');return}
+   btn.classList.add('copied');btn.querySelector('.copy-label').textContent='Скопировано';
+   btn._timer=setTimeout(()=>{btn.classList.remove('copied');btn.querySelector('.copy-label').textContent='Скопировать промпт'},2000);
+ }
+ document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{
+   let txt=mdFor(Number(btn.dataset.copy));let ok=await putClipboard(stripCopyright(txt));signal(btn,ok);
+ }));
+ editors.forEach(e=>{
+   e.addEventListener('input',store);
+   e.addEventListener('paste',event=>{
+     if(event.clipboardData&&event.clipboardData.getData('text/plain')!==undefined){
+       const t=event.clipboardData.getData('text/plain');
+       event.preventDefault();document.execCommand('insertText',false,t);
+     }
+   });
+ });
+ [...picks,...others,difficult].forEach(e=>{
+   const handler=()=>{
+     if(e.matches('.other-input') && e.value.trim()) {
+       const option=document.querySelector('[data-choice="'+e.dataset.other+'"]');
+       if(option)option.checked=true;
+     }
+     stat();autoSync();store()
+   };
+   e.addEventListener('input',handler);e.addEventListener('change',handler);
+ });
+ document.getElementById('print-btn').addEventListener('click',()=>window.print());
+ function printUpdate(){editors.forEach((e,i)=>{const p=document.getElementById('print-'+(i+1));p.innerHTML=e.innerHTML;const a=p.querySelector('#auto-kitchen');if(a)a.removeAttribute('contenteditable')})}
+ window.addEventListener('beforeprint',printUpdate);
+ restore();autoSync();stat();
+ window.__kitchenSheet={compiledSecond,passportText,editors,printUpdate,mdFor,autoSync,choiceGroups};
+})();
+</script></body></html>
